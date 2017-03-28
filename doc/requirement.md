@@ -9,12 +9,18 @@
 - Name
 - CreateTime 
 - LastModify
+- Host list
 
 **Actions**
 
 - Create: new Document
 - Delete
 - Read: Show List
+
+
+- Create: new host
+- Delete: host within host list
+
 
 ## <host> one host one page
 
@@ -25,10 +31,9 @@
 **Actions**
 
 - Create:
-- Delete:
 - Modify:
 - Read: Get host list
-
+- Port: 80 as default
 
 ## <path>
 
@@ -37,7 +42,6 @@
 *Description: describe the api*
 
 - Method: GET,POST,PUT,DELETE
-- Port: 80 as default
 
 - Request:
 	- Accept-Type: application/json
@@ -47,5 +51,5 @@
 - Response:
 	- Content-Type: application/json
 	- Return
-		- type: string, number, boolean, {}, []
+		- type: string, number, boolean, array, {}, [] 
 	- Dictionary: table used to describe each key
