@@ -4,7 +4,7 @@
 /*element-default-style*/
 *{box-sizing:border-box;}
 button{cursor:pointer;}
-body{font-size:$context-font-size;font-family:$default-font-family;}
+body{font-size:$context-font-size;font-family:$default-font-family;color:$context-font-color;}
 body,ul,li,ol,dl{@include padding-clear;@include margin-clear;}
 h1,h2,h3,h4,h5,h6,p{@include margin-clear;}
 a{text-decoration:none;color:inherit;}
