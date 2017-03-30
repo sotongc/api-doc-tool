@@ -1,0 +1,62 @@
+@import './constants.scss';
+@import './mixins.scss';
+
+/*element-default-style*/
+*{box-sizing:border-box;}
+button{cursor:pointer;}
+body{font-size:$context-font-size;font-family:$default-font-family;}
+body,ul,li,ol,dl{@include padding-clear;@include margin-clear;}
+h1,h2,h3,h4,h5,h6,p{@include margin-clear;}
+a{text-decoration:none;color:inherit;}
+
+/*userful*/
+.clearfix::after{content:".";clear:both;visibility:hidden;height:0px;*zoom:1;}
+
+/*---------------------------------ui-elements-------------------------------*/
+
+/* ui-element-method-buttons*/
+.method-btn{
+	padding:5px 10px;
+	background-color:#ccc;
+	font-size:$label-font-size;
+	color:$label-font-color;
+	outline:none;
+	border:none;
+}
+
+$method-list:(
+	"get":"#6cbd7d",
+	"post":"#63a8e2",
+	"put":"#22bac4",
+	"delete":"#d26460",
+);
+
+@each $key, $bgcolor in $method-list{
+	.http-#{$key}{
+		background-color:#{$bgcolor};
+	}
+}
+
+/*ui-element-datatype-label*/
+.datatype-label{
+	padding:3px 6px;
+	font-size:$table-font-size;
+	font-weight:500;
+	background-color:#ccc;
+	border:none;
+	color:$label-font-color;
+}
+
+$datatype-list:(
+	"string":"#8ac541",
+	"number":"#02a6ce",
+	"boolean":"#eb56af",
+	"array":"#f8cc19",
+	"object":"#653728"
+);
+
+@each $type, $bgcolor in $datatype-list{
+	.datatype-#{$type}{
+		background-color:#{$bgcolor};
+	}
+}

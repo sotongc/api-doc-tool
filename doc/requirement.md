@@ -10,6 +10,7 @@
 - CreateTime 
 - LastModify
 - Host list
+- version
 
 **Actions**
 
@@ -35,13 +36,15 @@
 - Read: Get host list
 - Port: 80 as default
 
-## <path>
+## <path> (apis)
 
 **Consist of:**
 
 *Description: describe the api*
 
 - Method: GET,POST,PUT,DELETE
+
+- Type: benchmark to classify apis into groups
 
 - Request:
 	- Accept-Type: application/json
