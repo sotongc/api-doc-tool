@@ -1,3 +1,5 @@
+@import './constants';
+
 /*mixin*/
 @mixin padding-clear{
 	padding:0px;
@@ -5,4 +7,16 @@
 
 @mixin margin-clear{
 	margin:0px;
+}
+
+/*ui-element-pagination-mixins*/
+@mixin pager-box{
+	min-width:34px;
+	height:34px;
+	line-height:34px;
+	text-align:center;
+	border:1px solid #d1dbe5;
+	padding:0px 6px;
+	cursor:pointer;
+	user-select:none;
 }

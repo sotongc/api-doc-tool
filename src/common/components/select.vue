@@ -8,9 +8,14 @@
 </template>
 <script>
 	export default{
+		props:{
+			options:{
+				type:Array,
+				default:()=>[]
+			}
+		},
 		data:function(){
 			return {
-				options:[],
 				selectedIndex:0,
 				extended:false
 			};
@@ -40,7 +45,10 @@
 			selected:function(eve){
 				let prop=eve.target.dataset;
 				this.selectedIndex=Number(prop.index);
-				window.setTimeout(this.extend,300);
+				window.setTimeout(function(){
+					this.extend();
+					this.$emit('select:change',this.selectedItem);
+				}.bind(this),300);
 			}
 		}
 	};
@@ -48,7 +56,6 @@
 <style lang="scss" scoped>
 	@import '../css/constants';
 
-	$select-width:110px;
 	.select{
 		display:inline-block;
 		position:relative;
@@ -59,10 +66,13 @@
 			}
 			line-height:28px;
 			height:34px;
+			max-width:110px;
 			font-size:$label-font-size;
-			width:$select-width;
 			border:1px solid #ccc;
 			font-weight:500;
+			white-space:nowrap;
+			text-overflow:ellipsis;
+			overflow:hidden;
 			&::after{
 				content:"--";
 				position:absolute;
@@ -76,7 +86,7 @@
 			cursor:pointer;
 			line-height:1.5;
 			position:absolute;
-			width:$select-width;
+			width:100%;
 			padding:6px 0px;
 			color:#48576a;
 			border:1px solid #d1dbe5;
