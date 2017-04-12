@@ -60,7 +60,13 @@ var config={
 		contentBase:_path.resolve(__dirname,'../view'),
 		port:3030,
 		compress:true,
-		inline:true
+		inline:true,
+		proxy:{
+			'/mock/api/*':{
+				target:'http://localhost:9090',
+				secure:false
+			}
+		}
 	},
 	plugins:[
 		new webpack.DefinePlugin({
